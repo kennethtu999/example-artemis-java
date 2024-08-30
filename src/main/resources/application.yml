@@ -1,0 +1,6 @@
+# application.yml
+spring:
+  activemq:
+    broker-url: (tcp://localhost:61616)?randomize=false
+    user: artemis
+    password: artemis
