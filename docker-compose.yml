@@ -1,0 +1,30 @@
+services:
+  artemis1:
+    image: vromero/activemq-artemis
+    container_name: artemis1
+    networks:
+      - artemis-net
+    ports:
+      - "61616:61616"
+      - "8161:8161"
+    environment:
+      - ARTEMIS_USERNAME=artemis
+      - ARTEMIS_PASSWORD=artemis
+      - ANONYMOUS_LOGIN=true
+
+  artemis2:
+    image: vromero/activemq-artemis
+    container_name: artemis2
+    networks:
+      - artemis-net
+    ports:
+      - "61617:61616"
+      - "8162:8161"
+    environment:
+      - ARTEMIS_USERNAME=artemis
+      - ARTEMIS_PASSWORD=artemis
+      - ANONYMOUS_LOGIN=true
+
+networks:
+  artemis-net:
+    driver: bridge
